@@ -1,14 +1,15 @@
 import "./App.css";
-import CardImage from "./CardImage";
+import Card from "./Card";
 import { heroList } from "./heroList";
 function App() {
   return (
     <>
-      {heroList.map((name) => {
-        console.log("i am here");
-        return <CardImage _inputString={name} key={name}></CardImage>;
-      })}
-      <CardImage _inputString={"bruce willis"}></CardImage>
+      <header>memory game</header>
+      <div className="gameContainer">
+        {heroList.map((actor) => {
+          return <Card _actor={actor} key={actor.name}></Card>;
+        })}
+      </div>
     </>
   );
 }
