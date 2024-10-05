@@ -4,7 +4,6 @@ async function getImage(_inputString) {
     `https://g.tenor.com/v1/search?q=${_inputString}&key=LIVDSRZULELA&limit=1`
   );
   const json = await response.json();
-  console.log(json);
   return json.results[0].media[0].gif.preview;
 }
 

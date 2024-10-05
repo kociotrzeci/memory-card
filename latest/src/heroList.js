@@ -9,7 +9,7 @@ export const heroList = [
   { query: "viggo mortensen", name: "Viggo Mortensen" },
   { query: "geoffrey rush", name: "Geoffrey Rush" },
   { query: "gary oldman leon", name: "Gary Oldman" },
-  { query: "godgather", name: "Godgather" },
+  { query: "godgather", name: "Marlon Brando" },
   { query: "harrison ford", name: "Harrison Ford" },
   { query: "helena bonham carter", name: "Helena Bonham Carter" },
   { query: "cate blanchett", name: "Cate Blanchett" },

@@ -2,7 +2,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   header {
     width: 98vw;
     height: 3.5rem;
