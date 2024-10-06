@@ -3,8 +3,11 @@ import Card from "./Card";
 import { heroList } from "./heroList";
 import { useState } from "react";
 function App() {
+  const [score, scoreUpdate] = useState(0);
+  const [playingCards, playingCardsUpdate] = useState(5);
+  const [highscore, highscoreUpdate] = useState(0);
   const [gameSet, setGameSet] = useState(shuffleArray(heroList));
-  const [visibleArray, updateArray] = useState(gameSet.slice(0, 5));
+  const [visibleArray, updateArray] = useState(gameSet.slice(0, playingCards));
 
   function shuffleArray(_array) {
     const arrayCopy = [..._array];
@@ -21,12 +24,25 @@ function App() {
       console.log("again, you lose");
       reset();
     } else {
+      scoreUpdate(score + 1);
+      if (score == highscore) highscoreUpdate(highscore + 1);
       _actor.clicked = true;
       updateArray(shuffleArray(visibleArray));
+      if (score == playingCards - 1) addCards();
+      else updateArray(shuffleArray(visibleArray));
     }
   }
 
+  function addCards() {
+    console.log("added more cards");
+    const addative = gameSet.slice(playingCards, playingCards + 5);
+    const array = visibleArray.concat(addative);
+    shuffleArray(array);
+    updateArray(shuffleArray(array));
+    playingCardsUpdate((prev) => prev + 5);
+  }
   function reset() {
+    scoreUpdate(0);
     const newGameSet = shuffleArray(heroList);
     setGameSet(newGameSet);
     updateArray(newGameSet.slice(0, 5));
@@ -34,7 +50,9 @@ function App() {
 
   return (
     <>
-      <header>memory game</header>
+      <p>
+        score: {score} highscore: {highscore}
+      </p>
       <div className="gameContainer">
         {visibleArray.map((actor) => {
           return (
