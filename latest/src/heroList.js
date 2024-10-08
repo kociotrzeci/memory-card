@@ -22,4 +22,6 @@ export const heroList = [
   { query: "Während Du Schliefst", name: "Sandra Bullock" },
   { query: "judi dench", name: "Judi Dench" },
   { query: "julianne moore movie", name: "Julianne Moore" },
+  { query: "John Wayne", name: "John Wayne" },
+  { query: "Sean Connery", name: "Sean Connery" },
 ];
