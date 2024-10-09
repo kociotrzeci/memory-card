@@ -53,6 +53,11 @@ function App() {
 
   return (
     <>
+      {" "}
+      <h5>
+        Get points by clicking on an image but don't click on any more than
+        once!
+      </h5>
       <p>
         score: {score} highscore: {highscore}
       </p>
