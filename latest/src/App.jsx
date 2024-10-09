@@ -20,7 +20,7 @@ function App() {
   }
 
   function handleClick(_actor) {
-    console.log(`${_actor.name} clicked`);
+    console.log(`${_actor.name} clicked, isGameOver: ${isGameOver}`);
     if (_actor.clicked) {
       console.log("again, you lose");
       setGameOver(true);
